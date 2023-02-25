@@ -2,33 +2,33 @@
 This Github repository contains my personal learning journey of data structures and algorithms, with code implementations in C++. It is aimed at anyone who wants to learn about different data structures and algorithms and how to implement them in C++.
 
 ## Table of Contents
-Data Structures
-Algorithms
-How to Run the Code
-Contributing
+- Data Structures
+- Algorithms
+- How to Run the Code
+- Contributing
 
 ## Data Structures
 The following data structures are currently implemented in this repository:
 
-Array
-Linked List
-Stack
-Queue
-Binary Search Tree
-Heap
+- Array
+- Linked List
+- Stack
+- Queue
+- Binary Search Tree
+- Heap
 
 ## Algorithms
 The following algorithms are currently implemented in this repository:
 
 - Sorting Algorithms
-Bubble Sort
-Insertion Sort
-Selection Sort
-Merge Sort
-Quick Sort
+- Bubble Sort
+- Insertion Sort
+- Selection Sort
+- Merge Sort
+- Quick Sort
 - Searching Algorithms
-Linear Search
-Binary Search
+- Linear Search
+- Binary Search
 
 ## How to Run the Code
 - Clone the repository using git clone https://github.com/moazamdev/data-structures-and-algorithms.git
