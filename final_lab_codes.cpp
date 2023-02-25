@@ -279,134 +279,134 @@
 
 // Binary Search Tree
 
-#include <iostream>
-using namespace std;
-class Node
-{
-public:
-    int data;
-    Node *left;
-    Node *right;
-    Node(int data)
-    {
-        this->data = data;
-        this->left = this->right = NULL;
-    }
-};
-void insert(Node *&root, int data)
-{
-    if (root == NULL)
-    {
-        Node *newNode = new Node(data);
-        root = newNode;
-        return;
-    }
-    else if (data <= root->data)
-    {
-        insert(root->left, data);
-    }
-    else if (data > root->data)
-    {
-        insert(root->right, data);
-    }
-    else
-    {
-        return;
-    }
-}
-bool search(Node *&root, int data)
-{
-    if (root == NULL)
-    {
-        return false;
-    }
-    else if (data == root->data)
-    {
-        return true;
-    }
-    else if (data <= root->data)
-    {
-        search(root->left, data);
-    }
-    else
-    {
-        search(root->right, data);
-    }
-}
-Node *calMinNode(Node *root)
-{
-    Node *temp = root;
-    while (temp && temp->left != NULL)
-    {
-        temp = temp->left;
-    }
-    return temp;
-}
-Node *deleteNode(Node *root, int key)
-{
-    if (root == NULL)
-    {
-        return root;
-    }
-    if (key < root->data)
-    {
-        root->left = deleteNode(root->left, key);
-    }
-    else if (key > root->data)
-    {
-        root->right = deleteNode(root->right, key);
-    }
-    else
-    {
-        if (root->left == NULL && root->right == NULL)
-        {
-            return NULL;
-        }
-        else if (root->left != NULL && root->right == NULL)
-        {
-            Node* temp = root->left;
-            free(root);
-            return temp;
-        }
-        else if (root->left == NULL && root->right != NULL)
-        {
-            Node* temp = root->right;
-            free(root);
-            return temp;
-        }
-        Node* temp = calMinNode(root->right);
-        root->data = temp->data;
-        root->right = deleteNode(root->right, temp->data); 
-    }
-    return root;
-}
-void print(Node *root)
-{
-    Node *temp = root;
-    if (temp == NULL)
-    {
-        return;
-    }
-    cout << temp->data << "->";
-    print(temp->left);
-    print(temp->right);
-}
-int main()
-{
-    Node *root = NULL;
+// #include <iostream>
+// using namespace std;
+// class Node
+// {
+// public:
+//     int data;
+//     Node *left;
+//     Node *right;
+//     Node(int data)
+//     {
+//         this->data = data;
+//         this->left = this->right = NULL;
+//     }
+// };
+// void insert(Node *&root, int data)
+// {
+//     if (root == NULL)
+//     {
+//         Node *newNode = new Node(data);
+//         root = newNode;
+//         return;
+//     }
+//     else if (data <= root->data)
+//     {
+//         insert(root->left, data);
+//     }
+//     else if (data > root->data)
+//     {
+//         insert(root->right, data);
+//     }
+//     else
+//     {
+//         return;
+//     }
+// }
+// bool search(Node *&root, int data)
+// {
+//     if (root == NULL)
+//     {
+//         return false;
+//     }
+//     else if (data == root->data)
+//     {
+//         return true;
+//     }
+//     else if (data <= root->data)
+//     {
+//         search(root->left, data);
+//     }
+//     else
+//     {
+//         search(root->right, data);
+//     }
+// }
+// Node *calMinNode(Node *root)
+// {
+//     Node *temp = root;
+//     while (temp && temp->left != NULL)
+//     {
+//         temp = temp->left;
+//     }
+//     return temp;
+// }
+// Node *deleteNode(Node *root, int key)
+// {
+//     if (root == NULL)
+//     {
+//         return root;
+//     }
+//     if (key < root->data)
+//     {
+//         root->left = deleteNode(root->left, key);
+//     }
+//     else if (key > root->data)
+//     {
+//         root->right = deleteNode(root->right, key);
+//     }
+//     else
+//     {
+//         if (root->left == NULL && root->right == NULL)
+//         {
+//             return NULL;
+//         }
+//         else if (root->left != NULL && root->right == NULL)
+//         {
+//             Node* temp = root->left;
+//             free(root);
+//             return temp;
+//         }
+//         else if (root->left == NULL && root->right != NULL)
+//         {
+//             Node* temp = root->right;
+//             free(root);
+//             return temp;
+//         }
+//         Node* temp = calMinNode(root->right);
+//         root->data = temp->data;
+//         root->right = deleteNode(root->right, temp->data); 
+//     }
+//     return root;
+// }
+// void print(Node *root)
+// {
+//     Node *temp = root;
+//     if (temp == NULL)
+//     {
+//         return;
+//     }
+//     cout << temp->data << "->";
+//     print(temp->left);
+//     print(temp->right);
+// }
+// int main()
+// {
+//     Node *root = NULL;
 
-    insert(root, 15);
-    insert(root, 10);
-    insert(root, 20);
-    insert(root, 25);
+//     insert(root, 15);
+//     insert(root, 10);
+//     insert(root, 20);
+//     insert(root, 25);
     
-    deleteNode(root, 15);
+//     deleteNode(root, 15);
     
-    // int target = 25;
-    // if (search(root, target))
-    //     cout << "found\n";
-    // else
-    //     cout << "not found\n";
-    print(root);
-    return 0;
-}
+//     // int target = 25;
+//     // if (search(root, target))
+//     //     cout << "found\n";
+//     // else
+//     //     cout << "not found\n";
+//     print(root);
+//     return 0;
+// }
